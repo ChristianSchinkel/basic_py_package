@@ -6,6 +6,11 @@ For modern installations, pyproject.toml is preferred.
 """
 
 from setuptools import setup, find_packages
+from pathlib import Path
+
+# Read the README file
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="basic_py_package",
@@ -13,7 +18,7 @@ setup(
     author="Christian Schinkel",
     author_email="christian@example.com",
     description="A basic Python package template that can be installed via pip",
-    long_description=open("README.md").read(),
+    long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ChristianSchinkel/basic_py_package",
     packages=find_packages(),
